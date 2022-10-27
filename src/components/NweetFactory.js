@@ -1,12 +1,7 @@
 import React, { useState, useRef } from "react";
 import { storageService, dbService, authService } from "../fbase";
 import { ref, uploadString, getDownloadURL } from "@firebase/storage";
-import {
-  collection,
-  addDoc,
-  serverTimestamp,
-  Timestamp,
-} from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid"; // uuid는 기본적으로 어떤 특별한 식별자를 랜덤으로 생성해줌. 사진에 이름 붙이기 위해 설치해줌.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -38,11 +33,10 @@ const NweetFactory = ({ userObj }) => {
     const todayTime = () => {
       let now = new Date();
       let year = now.getFullYear();
-      let todayMonth = String(now.getMonth() + 1).padStart(2, "0");
-      let todayDate = String(now.getDate()).padStart(2, "0");
-      let hours = String(now.getHours()).padStart(2, "0");
-      let minutes = String(now.getMinutes()).padStart(2, "0");
-      let seconds = String(now.getSeconds()).padStart(2, "0"); // 문자열 변환 후 앞에 0 붙여줌
+      let todayMonth = now.getMonth() + 1;
+      let todayDate = now.getDate();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
 
       return (
         year +
@@ -54,9 +48,7 @@ const NweetFactory = ({ userObj }) => {
         hours +
         "시 " +
         minutes +
-        "분 " +
-        seconds +
-        "초"
+        "분"
       );
     };
 
@@ -67,7 +59,6 @@ const NweetFactory = ({ userObj }) => {
       creatorId: userObj.uid,
       attachmentURL,
       author: authService.currentUser.displayName,
-      // timestamp: serverTimestamp(),
     };
 
     await addDoc(collection(dbService, "nweets"), nweetObj);
