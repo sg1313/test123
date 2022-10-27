@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Auth from "./Auth";
 import Home from "../routes/Home";
 import Navigation from "./Navigation";
@@ -18,7 +18,7 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj, nweetObj }) => {
         flexDirection: "column",
       }}
     >
-      <Router>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         {isLoggedIn && <Navigation userObj={userObj} />}
         <Routes>
           {isLoggedIn ? (
@@ -44,7 +44,7 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj, nweetObj }) => {
           )}
           ;
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 };
