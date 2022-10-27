@@ -15,7 +15,7 @@ const Home = ({ userObj }) => {
     // 컴포넌트가 amount되면 useEffect 사용
     const q = query(
       collection(dbService, "nweets"),
-      orderBy("timestamp", "desc")
+      orderBy("createdAt", "desc")
     );
     onSnapshot(
       q,
