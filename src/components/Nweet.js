@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { dbService, storageService } from "../fbase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Nweet = ({ nweetObj, isOwner, userObj }) => {
   const [editing, setEditing] = useState(false); // 수정모드 용
