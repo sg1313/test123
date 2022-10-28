@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  BrowserRouter,
+} from "react-router-dom";
 import Auth from "./Auth";
 import Home from "../routes/Home";
 import Navigation from "./Navigation";
@@ -9,17 +14,17 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj, nweetObj }) => {
   // app.js에서 맨 밑에 userObj 연결해줘서 App.js에 의해 userObj 받는다
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <div
-      style={{
-        maxWidth: 890,
-        width: "100%",
-        margin: "80px auto 0px",
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
-    >
-      <Router>
+      <div
+        style={{
+          maxWidth: 890,
+          width: "100%",
+          margin: "80px auto 0px",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
+        {/* <Router> */}
         {isLoggedIn && <Navigation userObj={userObj} />}
         <Routes>
           {isLoggedIn ? (
@@ -45,8 +50,8 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj, nweetObj }) => {
           )}
           ;
         </Routes>
-      </Router>
-    </div>
+        {/* </Router> */}
+      </div>
     </BrowserRouter>
   );
 };
