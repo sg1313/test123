@@ -2,22 +2,25 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const cors = require("cors");
+const dicographyRouter = require("./routes/discography");
 
 app.use(cors());
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "react-project/build")));
 
+app.use("/discography", dicographyRouter);
+
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "/react-project/build/index.html"));
 });
 
-app.get("/albums", (req, res) => {
-  res.json({
-    name: "proof",
-    info: "digital sigle",
-  });
-});
+// app.get("/discography/albums", (req, res) => {
+//   res.json({
+//     name: "proof",
+//     info: "digital sigle",
+//   });
+// });
 
 app.listen(8080, function () {
   console.log("listening on 8080");

@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
+import Navigation from "./components/Navigation";
+import Router from "./components/Router";
 
 function App() {
   return (
     <div>
-리액트로 만든 App.js 페이지 입니다 ~~
-왜 이 페이지가 안뜨지 ..?? 
+      <Navigation />
+      리액트로 만든 App.js 페이지 입니다 ~~ cd react-project 해야지 이
+      페이지가뜸
+      <Router />
     </div>
   );
 }
