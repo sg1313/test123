@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Discography = () => {
-  const [detail, setDetail] = useState(); // 현재 false 니까
+  const [detail, setDetail] = useState(false); // 현재 false 니까
   // console.log("discography page 입니다 ");
+  // console.log("현재 detail값 --->", detail);
 
+  //onClickLink 누르면 useEffect 발동 !!..
   useEffect(() => {
-    setDetail(false);
-    console.log("detail 값 ---> ", detail);
+    setDetail(true);
+    console.log("detail 값(useEffect발동) ---> ", detail);
   }, []);
 
   const onClickLink = (e) => {
     setDetail((e) => !e); // false를 true로 바꿔주기
-    console.log("setDetail true");
+    console.log("detail 값 --->", detail);
   };
 
   return (
