@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Discography = () => {
   const [detail, setDetail] = useState(); // 현재 false 니까
   // console.log("discography page 입니다 ");
 
+  useEffect(() => {
+    setDetail(false);
+    console.log("detail 값 ---> ", detail);
+  }, []);
+
   const onClickLink = (e) => {
-    setDetail(true); // false를 true로 바꿔주기
+    setDetail((e) => !e); // false를 true로 바꿔주기
     console.log("setDetail true");
   };
 
@@ -17,9 +22,8 @@ const Discography = () => {
         다르게 하기
       </p>
       <p>여기 화면에서 서버로 axios로 요청해야 하구만 .. !! </p> */}
-      {detail ? <Outlet /> : <div>---------음반 목록-----------</div>}
-      {/* detail이 true면 outlet 작동해서 디테일 보여주기, false면 음반목록 보여주기  */}
-      {/* <Outlet /> */}
+      {detail ? <Outlet /> : <div> ----앨범목록---- </div>}
+      {/* detail이 true면 outlet 작동해서 앨범상세 보여주기, 그렇지 않으면 목록 보여주기 */}
 
       <div>
         <ul>

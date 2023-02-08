@@ -9,15 +9,19 @@ const Albums = () => {
   const navigate = useNavigate();
 
   const [isOpen, setOpen] = useState();
+
   const onClickButton = () => {
     navigate(-1);
-    console.log("setDetail false");
+    console.log("뒤로가기 작동");
   };
 
   return (
     <div>
       <h2>{`앨범 "${albums}" 내용입니다`}</h2>
-      <button onClick={onClickButton}> 뒤로가기 </button>
+      <button onClick={onClickButton} style={{ border: "2px solid red" }}>
+        {" "}
+        뒤로가기{" "}
+      </button>
       <div style={{ border: "1px solid black", width: "200px" }}>
         앨범 내용 최고야 개쩜 ㅇㅇ
         <button
