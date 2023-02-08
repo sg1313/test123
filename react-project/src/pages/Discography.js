@@ -1,26 +1,36 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const Discography = () => {
+  const [detail, setDetail] = useState(); // 현재 false 니까
+  // console.log("discography page 입니다 ");
+
+  const onClickLink = (e) => {
+    setDetail(true); // false를 true로 바꿔주기
+    console.log("setDetail true");
+  };
+
   return (
     <div>
-      방탄 음반 목록
-      <p>
+      {/* <p>
         앨범명을 클릭하면 상세페이지로 이동한다. <br /> 각 앨범명마다 내용을
-        다르게 하고 싶다 ...
+        다르게 하기
       </p>
-      <p>
-        주소 창에는 discography/detail/proof 아니면 <br />
-        discography/proof... 할 것인지.. 고민해봐야 한다. ㅠㅠ 파라미터로
-        가져오는게 나을거같다..{" "}
-      </p>
-      <p>여기 화면에서 서버로 axios로 요청해야 하구만 .. !! </p>
+      <p>여기 화면에서 서버로 axios로 요청해야 하구만 .. !! </p> */}
+      {detail ? <Outlet /> : <div>---------음반 목록-----------</div>}
+      {/* detail이 true면 outlet 작동해서 디테일 보여주기, false면 음반목록 보여주기  */}
+      {/* <Outlet /> */}
+
       <div>
         <ul>
           <li>
-            <Link to="/discography/albums">Proof</Link>
+            <Link to="/discography/proof" onClick={onClickLink}>
+              Proof
+            </Link>
           </li>
-          <li>Butter</li>
+          <li>
+            <Link to="/discography/butter">Butter</Link>
+          </li>
           <li>Be</li>
           {/* <li>
             <Link to="/discography/dynamite">dynamite</Link>

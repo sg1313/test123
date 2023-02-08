@@ -1,26 +1,23 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Navigation from "./components/Navigation";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Albums = () => {
-  // const params = useParams();
-  // console.log("params쓰고싶은데 어케하지..", params);
+  const albums = useParams();
+  console.log("params--->", albums);
+  console.log("앨범명:", albums.albums, "페이지 접속 !!");
 
   const navigate = useNavigate();
 
   const [isOpen, setOpen] = useState();
+  const onClickButton = () => {
+    navigate(-1);
+    console.log("setDetail false");
+  };
 
   return (
     <div>
-      <Navigation />
-      <button
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        {" "}
-        뒤로가기{" "}
-      </button>
+      <h2>{`앨범 "${albums}" 내용입니다`}</h2>
+      <button onClick={onClickButton}> 뒤로가기 </button>
       <div style={{ border: "1px solid black", width: "200px" }}>
         앨범 내용 최고야 개쩜 ㅇㅇ
         <button
