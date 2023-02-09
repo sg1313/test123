@@ -1,4 +1,14 @@
 import React, { useState } from "react";
+import axios from "axios";
+
+axios
+  .get("/board")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 const Board = () => {
   const [text, setText] = useState();
@@ -6,13 +16,12 @@ const Board = () => {
   const onReset = () => {
     setText("");
   };
-  
+
   const onChange = (e) => {
     // setText(e.target.value);
     console.log(e.target.value);
   };
   const onClickButton = (e) => {
-
     setText(e.target.value);
   };
 

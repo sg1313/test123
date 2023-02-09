@@ -1,9 +1,11 @@
 const express = require("express");
 const board = require("./models/board");
 const models = require("./models/index");
+const cors = require("cors");
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -17,8 +19,6 @@ app.get("/discography/:albums", async (req, res, next) => {
   console.log(proofInfo);
   res.json(proofInfo);
 });
-
-app.get("/board");
 
 app.get("/board", async (req, res, next) => {
   console.log("-----board게시판----");
