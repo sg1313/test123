@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-axios
-  .get("/board")
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+axios;
+// .get("/board")
+// .then((response) => {
+//   console.log(response.data);
+// })
+// .catch((error) => {
+//   console.log(error);
+// });
 
 const Board = () => {
   const [text, setText] = useState();
