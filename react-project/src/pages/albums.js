@@ -17,7 +17,7 @@ const Albums = () => {
 
   return (
     <div>
-      <h2>{`앨범 "${albums}" 내용입니다`}</h2>
+      <h2>{`앨범 "${albums.albums}" 내용입니다`}</h2>
       <button onClick={onClickButton} style={{ border: "2px solid red" }}>
         {" "}
         뒤로가기{" "}

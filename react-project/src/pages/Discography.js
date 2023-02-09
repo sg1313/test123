@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Discography = () => {
-  const [detail, setDetail] = useState(false); // 현재 false 니까
+  // const [detail, setDetail] = useState(false); // 현재 false 니까
   // console.log("discography page 입니다 ");
   // console.log("현재 detail값 --->", detail);
 
   //onClickLink 누르면 useEffect 발동 !!..
-  useEffect(() => {
-    setDetail(true);
-    console.log("detail 값(useEffect발동) ---> ", detail);
-  }, []);
+  // useEffect(() => {
+  //   setDetail(true);
+  //   console.log("detail 값(useEffect발동) ---> ", detail);
+  // }, []);
 
-  const onClickLink = (e) => {
-    setDetail((e) => !e); // false를 true로 바꿔주기
-    console.log("detail 값 --->", detail);
-  };
+  // const onClickLink = (e) => {
+  //   setDetail((e) => !e); // false를 true로 바꿔주기
+  //   console.log("detail 값 --->", detail);
+  // };
 
   return (
     <div>
@@ -24,20 +24,20 @@ const Discography = () => {
         다르게 하기
       </p>
       <p>여기 화면에서 서버로 axios로 요청해야 하구만 .. !! </p> */}
-      {detail ? <Outlet /> : <div> ----앨범목록---- </div>}
+      {/* {detail ? <Outlet /> : <div> ----앨범목록---- </div>} */}
       {/* detail이 true면 outlet 작동해서 앨범상세 보여주기, 그렇지 않으면 목록 보여주기 */}
 
       <div>
         <ul>
           <li>
-            <Link to="/discography/proof" onClick={onClickLink}>
-              Proof
-            </Link>
+            <Link to="/discography/proof">Proof</Link>
           </li>
           <li>
             <Link to="/discography/butter">Butter</Link>
           </li>
-          <li>Be</li>
+          <li>
+            <Link to="/discography/Be">Be</Link>
+          </li>
           {/* <li>
             <Link to="/discography/dynamite">dynamite</Link>
           </li>
