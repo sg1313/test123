@@ -1,14 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 const Albums = () => {
   const albums = useParams();
   console.log("params--->", albums);
   console.log("앨범명:", albums.albums, "페이지 접속 !!");
+  const albumName = albums.albums;
+  console.log("albumName : ", albumName);
 
   const navigate = useNavigate();
 
   const [isOpen, setOpen] = useState();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/discography/:albums", {
+        params: { albums: albumName },
+      })
+      .then((response) => {
+        console.log("----axios response data----", response.data);
+        console.log("----axios response---------", response);
+        console.log("파라미터뭔데..", response.data[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
   const onClickButton = () => {
     navigate(-1);

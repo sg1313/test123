@@ -13,8 +13,15 @@ app.get("/discography/:albums", async (req, res, next) => {
   console.log("--------파라미터---->", req.params);
   console.log("----album명만 꺼내기>", req.params.albums);
 
-  const proofInfo = await models.albums.findAll({
+  // let { albumName } = req.body;
+  // console.log("---req.body---", albumName);
+  let searchAlbum = req.params.albums;
+
+  const proofInfo = await models.albums.findOne({
     raw: true,
+    where: {
+      name: searchAlbum,
+    },
   });
   console.log(proofInfo);
   res.json(proofInfo);
