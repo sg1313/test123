@@ -9,24 +9,24 @@ const Albums = () => {
   const albumName = albums.albums;
   console.log("albumName : ", albumName);
 
-  const navigate = useNavigate();
-
-  const [isOpen, setOpen] = useState();
-
   useEffect(() => {
     axios
-      .get("http://localhost:8080/discography/:albums", {
-        params: { albums: albumName },
-      })
+      .get(`http://localhost:8080/discography/${albums.albums}`)
       .then((response) => {
         console.log("----axios response data----", response.data);
         console.log("----axios response---------", response);
-        console.log("파라미터뭔데..", response.data[0]);
+        console.log("response.data.name 갖고오기===>..", response.data.name);
+        setDetail(response.data); // setDetail에 받아온 response.data 넣기
       })
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
+
+  const navigate = useNavigate();
+
+  const [isOpen, setOpen] = useState();
+  const [detail, setDetail] = useState();
 
   const onClickButton = () => {
     navigate(-1);
@@ -36,6 +36,17 @@ const Albums = () => {
   return (
     <div>
       <h2>{`앨범 "${albums.albums}" 내용입니다`}</h2>
+      <ul>
+        {detail?.map((n) => {
+          <li key={n.id}>
+            {n.nickname}
+            <br />
+            {n.content}
+            <br />
+            {n.date}
+          </li>;
+        })}
+      </ul>
       <button onClick={onClickButton} style={{ border: "2px solid red" }}>
         {" "}
         뒤로가기{" "}
