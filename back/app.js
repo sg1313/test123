@@ -2,12 +2,14 @@ const express = require("express");
 const board = require("./models/board");
 const models = require("./models/index");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/discography/:albums", async (req, res, next) => {
   console.log("--------파라미터---->", req.params);

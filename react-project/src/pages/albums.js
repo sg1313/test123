@@ -48,15 +48,6 @@ const Albums = () => {
       </button>
       <div style={{ border: "1px solid black", width: "200px" }}>
         앨범 내용 최고야 개쩜 ㅇㅇ
-        {/* <ul>
-          {data.forEach((n) => (
-            <li>
-              {n.content}
-              <br />
-              {n.info}
-            </li>
-          ))}
-        </ul> */}
         <button
           onClick={() => {
             setOpen((e) => !e);
@@ -65,18 +56,23 @@ const Albums = () => {
           {isOpen ? "간략히" : "더보기"}
         </button>
       </div>
-      {isOpen && <div>Proof 앨범 상세 내용 입니다 개쩔어 </div>}
+      {isOpen && (
+        <div>
+          앨범 상세 내용 입니다 <br /> {detail?.content}{" "}
+        </div>
+      )}
       <br />
       <div>--------이미지 오는 자리-----------</div>
       <img
-        src="https://ibighit.com/bts/images/bts/discography/proof/discography-cover.png"
+        src={`/images/${detail?.image}`}
         width="300px"
         height="300px"
         alt="proof"
       ></img>
       <div>
         앨범 소개 미니앨범인지, 정규앨범인지 디지털 어쩌구인지
-        {/* {`${detail.info}`} */}
+        <br />
+        {detail?.info}
       </div>
       <div>뮤직비디오</div>
       <div>트랙리스트</div>
