@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Discography = () => {
   // const [detail, setDetail] = useState(false); // 현재 false 니까
@@ -27,50 +27,69 @@ const Discography = () => {
             <Link to="/discography/proof">Proof</Link>
           </li>
           <li>
-            <Link to="/discography/butter">Butter</Link>
+            <Link to="/discography/permission_to_dance">
+              Permission To Dance
+            </Link>
           </li>
           <li>
-            <Link to="/discography/Be">Be</Link>
-          </li>
-          {/* <li>
-            <Link to="/discography/dynamite">dynamite</Link>
+            <Link to="/discography/butter">BUTTER</Link>
           </li>
           <li>
-            <Link to="/discography/mapofthesoul7">map of the soul 7</Link>
+            <Link to="/discography/Be">BE</Link>
           </li>
           <li>
-            <Link to="/discography/mapofthesoul_persona">
+            <Link to="/discography/dynamite">DYNAMITE</Link>
+          </li>
+          <li>
+            <Link to="/discography/map_of_the_soul_7">map of the soul 7</Link>
+          </li>
+          <li>
+            <Link to="/discography/map_of_the_soul_persona">
               map of the soul Persona
             </Link>
           </li>
           <li>
-            <Link to="/discography/loveyourlsef_answer">
+            <Link to="/discography/love_yourself_answer">
               LoveYourlsef Answer
             </Link>
           </li>
           <li>
-            <Link to="/discography/loveyourself_tear">LoveYourlsef Tear</Link>
+            <Link to="/discography/love_yourself_tear">LoveYourlsef Tear</Link>
           </li>
           <li>
-            <Link to="/discography/loveyourself_her">LoveYourlsef Her</Link>
+            <Link to="/discography/love_yourself_her">LoveYourlsef Her</Link>
           </li>
           <li>
-            <Link to="/discography/youneverwalkalone">
+            <Link to="/discography/you_never_walk_alone">
               you never walk alone
             </Link>
           </li>
           <li>
-            <Link to="/discography/darkandwild">dark and wild</Link>
+            <Link to="/discography/wings">wings</Link>
           </li>
           <li>
-            <Link to="/discography/skoolluvaffair">skool luv affair</Link>
+            <Link to="/discography/hyyh_young_forever">
+              화양연화 young forever
+            </Link>
+          </li>
+          <li>
+            <Link to="/discography/hyyh_pt2">화양연화 pt.2</Link>
+          </li>
+          <li>
+            <Link to="/discography/hyyh_pt1">화양연화 pt.1</Link>
+          </li>
+          <li>
+            <Link to="/discography/dark_and_wild">dark and wild</Link>
+          </li>
+          <li>
+            <Link to="/discography/skool_luv_affair">skool luv affair</Link>
           </li>
           <li>
             <Link to="/discography/orul82">o ru l8 2</Link>
           </li>
           <li>
             <Link to="/discography/2cool4skool">2cool4skool</Link>
-          </li> */}
+          </li>
         </ul>
       </div>
     </div>

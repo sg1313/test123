@@ -39,6 +39,18 @@ app.get("/board", async (req, res, next) => {
   res.json(board);
 });
 
+app.post("/board", async (req, res, next) => {
+  const board = await models.board.create({
+    raw: true,
+    // nickname : req.body.nickname,
+    content: req.body.content,
+    // date : req.body.date,
+  });
+  console.log("----글 등록 완----", board);
+  console.log("----------req.body--------", req.body);
+  res.json(board);
+});
+
 app.set("port", process.env.PORT || 8080);
 
 // 서버 실행

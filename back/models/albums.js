@@ -20,13 +20,23 @@ module.exports = function(sequelize, DataTypes) {
     },
     info: {
       type: DataTypes.STRING(100),
-      allowNull: false,
+      allowNull: true,
       comment: "앨범정보"
     },
     image: {
       type: DataTypes.STRING(100),
       allowNull: false,
       comment: "앨범커버"
+    },
+    tracklist: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      comment: "트랙리스트"
+    },
+    release: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      comment: "날짜"
     }
   }, {
     sequelize,

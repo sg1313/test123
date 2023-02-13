@@ -7,18 +7,21 @@ const Albums = () => {
   const [detail, setDetail] = useState();
 
   const albums = useParams();
-  // console.log("params--->", albums);
-  // console.log("앨범명:", albums.albums, "페이지 접속 !!");
+  console.log("🎹️params--->", albums);
+  console.log("🎶️앨범명:", albums.albums, "페이지 접속 !!");
   const albumName = albums.albums;
-  console.log("albumName : ", albumName);
+  console.log("🎵️--------albumName : ", albumName);
 
   useEffect(() => {
     axios
       .get(`http://localhost:8080/discography/${albums.albums}`)
       .then((response) => {
-        console.log("----axios response data----", response.data);
+        console.log("⏩️⏩️----axios response data----", response.data);
         // console.log("----axios response---------", response);
-        console.log("response.data.name 갖고오기===>..", response.data.name);
+        console.log(
+          "🔵️🔵️🔵️🔵️🔵️🔵️response.data.name 갖고오기🔵️🔵️🔵️🔵️🔵️🔵️",
+          response.data.name
+        );
         setDetail(response.data); // setDetail에 받아온 response.data 넣기
       })
       .catch((error) => {
@@ -26,8 +29,8 @@ const Albums = () => {
       });
   }, []);
 
-  console.log("-------deatil-----", detail);
-  console.log("----deatail.name--", detail?.name);
+  console.log("🍎️-----deatil-----🍎️", detail);
+  console.log("💜️----deatail.name----💜️", detail?.name);
   // const albuminfo = Object?.values(detail);
   // console.log("---albuminfo---", albuminfo);
   // console.log("----옵셔널체이닝 외않되---", albuminfo)
@@ -72,10 +75,16 @@ const Albums = () => {
       <div>
         앨범 소개 미니앨범인지, 정규앨범인지 디지털 어쩌구인지
         <br />
+        {detail?.release}
+        <br />
         {detail?.info}
       </div>
       <div>뮤직비디오</div>
-      <div>트랙리스트</div>
+      <div>
+        트랙리스트
+        <br />
+        {detail?.tracklist}
+      </div>
     </div>
   );
 };
