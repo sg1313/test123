@@ -3,9 +3,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Albums = () => {
+  const [isOpen, setOpen] = useState();
+  const [detail, setDetail] = useState();
+
   const albums = useParams();
-  console.log("params--->", albums);
-  console.log("앨범명:", albums.albums, "페이지 접속 !!");
+  // console.log("params--->", albums);
+  // console.log("앨범명:", albums.albums, "페이지 접속 !!");
   const albumName = albums.albums;
   console.log("albumName : ", albumName);
 
@@ -14,7 +17,7 @@ const Albums = () => {
       .get(`http://localhost:8080/discography/${albums.albums}`)
       .then((response) => {
         console.log("----axios response data----", response.data);
-        console.log("----axios response---------", response);
+        // console.log("----axios response---------", response);
         console.log("response.data.name 갖고오기===>..", response.data.name);
         setDetail(response.data); // setDetail에 받아온 response.data 넣기
       })
@@ -23,10 +26,13 @@ const Albums = () => {
       });
   }, []);
 
-  const navigate = useNavigate();
+  console.log("-------deatil-----", detail);
+  console.log("----deatail.name--", detail?.name);
+  // const albuminfo = Object?.values(detail);
+  // console.log("---albuminfo---", albuminfo);
+  // console.log("----옵셔널체이닝 외않되---", albuminfo)
 
-  const [isOpen, setOpen] = useState();
-  const [detail, setDetail] = useState();
+  const navigate = useNavigate();
 
   const onClickButton = () => {
     navigate(-1);
@@ -36,23 +42,21 @@ const Albums = () => {
   return (
     <div>
       <h2>{`앨범 "${albums.albums}" 내용입니다`}</h2>
-      <ul>
-        {detail?.map((n) => {
-          <li key={n.id}>
-            {n.nickname}
-            <br />
-            {n.content}
-            <br />
-            {n.date}
-          </li>;
-        })}
-      </ul>
       <button onClick={onClickButton} style={{ border: "2px solid red" }}>
         {" "}
         뒤로가기{" "}
       </button>
       <div style={{ border: "1px solid black", width: "200px" }}>
         앨범 내용 최고야 개쩜 ㅇㅇ
+        {/* <ul>
+          {data.forEach((n) => (
+            <li>
+              {n.content}
+              <br />
+              {n.info}
+            </li>
+          ))}
+        </ul> */}
         <button
           onClick={() => {
             setOpen((e) => !e);
@@ -70,8 +74,10 @@ const Albums = () => {
         height="300px"
         alt="proof"
       ></img>
-      {/* <p>{params.albums}</p> */}
-      <div>앨범 소개 미니앨범인지, 정규앨범인지 디지털 어쩌구인지</div>
+      <div>
+        앨범 소개 미니앨범인지, 정규앨범인지 디지털 어쩌구인지
+        {/* {`${detail.info}`} */}
+      </div>
       <div>뮤직비디오</div>
       <div>트랙리스트</div>
     </div>
