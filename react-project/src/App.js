@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "./components/Navigation";
 import Router from "./components/Router";
+import "./style/common.css";
 
 function App() {
   return (

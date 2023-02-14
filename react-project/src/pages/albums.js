@@ -80,7 +80,7 @@ const Albums = () => {
         {detail?.info}
       </div>
       <div>뮤직비디오</div>
-      <div>
+      <div style={{ whiteSpace: "pre-line" }}>
         트랙리스트
         <br />
         {detail?.tracklist}
