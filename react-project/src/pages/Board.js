@@ -40,7 +40,6 @@ const Board = () => {
   };
 
   const onClickButton = (e) => {
-    e.preventDefault();
     console.log("💜️---게시글등록----💜️", values);
     // console.log("😺️--게시글등록----😺️", e.target.nickname);
     // console.log("--오늘날짜--", today);
@@ -71,27 +70,9 @@ const Board = () => {
   // console.log(e.target.value);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("----텍스트..--", values.content);
-    alert("안녕하세요" + values.nickname + values.content);
-
-    // // input 박스 안에 넣은 값 등록하기
-    // axios
-    //   .post("http://localhost:8080/board", {
-    //     content: values.content,
-    //     nickname: values.nickname,
-    //     date: today,
-    //   })
-    //   .then((res) => {
-    //     console.log("🗨️🗨️🗨️🗨️🗨️🗨️----res.data", res.data);
-    //     alert('등록완료 !!');
-    //     // setContent(res.data);
-    //     // setNickname(res.data);
-    //     setValues(res.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    // e.preventDefault();
+    // 등록하기 버튼 누르면 알람창 이게 먼저 뜨네 ...
+    alert(`등록내용 : ${values.nickname} & ${values.content}`);
   };
 
   return (
