@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import List from "./List";
 
@@ -23,7 +23,7 @@ const Board = () => {
     // date: today,
   });
 
-  // const { textRef, nicknameRef } = useRef();
+  const { contentRef, nicknameRef } = useRef();
 
   const onReset = () => {
     setValues("");
@@ -36,19 +36,16 @@ const Board = () => {
       // key값 : value 값. key로 input의 name을, value로 input에 입력한 '값'으로 한다.
     });
     console.log(e.target.value);
-    // setContent(e.target.value); // 이거 안하면 콘솔에 1 2 3 4 따로따로 찍힘 ...
   };
 
   const onClickButton = (e) => {
     console.log("💜️---게시글등록----💜️", values);
-    // console.log("😺️--게시글등록----😺️", e.target.nickname);
-    // console.log("--오늘날짜--", today);
 
     // input 박스 안에 넣은 값 등록하기
     axios
       .post("http://localhost:8080/board", {
-        content: values.content,
-        nickname: values.nickname,
+        content: contentRef.current.value,
+        nickname: nicknameRef.current.value,
         // date: today,
       })
       .then((res) => {
@@ -62,12 +59,6 @@ const Board = () => {
         console.log(error);
       });
   };
-  // const { name, value } = e.target;
-  // setMessage((prevMessages) => ({
-  //   ...prevMessages,
-  //   [name]: value,
-  // }));
-  // console.log(e.target.value);
 
   const handleSubmit = (e) => {
     // e.preventDefault();
@@ -87,7 +78,7 @@ const Board = () => {
           onChange={onChange}
           required
           placeholder="닉네임"
-          // ref={textRef}
+          ref={nicknameRef}
         />
         <input
           type="text"
@@ -95,7 +86,7 @@ const Board = () => {
           name="content"
           onChange={onChange}
           required
-          // ref={nicknameRef}
+          ref={contentRef}
         />
         <button onClick={onReset}>초기화</button>
         <button onClick={onClickButton}>등록하기 </button>
