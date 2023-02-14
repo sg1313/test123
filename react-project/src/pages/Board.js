@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import List from "./List";
 
 // const getData = async () => {
 //   try {
@@ -10,83 +11,115 @@ import axios from "axios";
 //     console.log("----에러----", error);
 //   }
 // };
-
 // getData();
 
-// axios
-//   .get("http://localhost:8080/board")
-//   .then((response) => {
-//     console.log(response.data);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-
 const Board = () => {
-  const [text, setText] = useState();
-  const [content, setContent] = useState(); // axios.get에서 게시판 내용에 사용됨
-  // const [message, setMessage] = useState({
-  //   content: "",
-  // });
+  // const [content, setContent] = useState();
+  // const [nickname, setNickname] = useState();
+  // const today = new Date();
+  const [values, setValues] = useState({
+    content: "",
+    nickname: "",
+    // date: today,
+  });
 
-  useEffect(() => {
+  // const { textRef, nicknameRef } = useRef();
+
+  const onReset = () => {
+    setValues("");
+  };
+
+  const onChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+      // key값 : value 값. key로 input의 name을, value로 input에 입력한 '값'으로 한다.
+    });
+    console.log(e.target.value);
+    // setContent(e.target.value); // 이거 안하면 콘솔에 1 2 3 4 따로따로 찍힘 ...
+  };
+
+  const onClickButton = (e) => {
+    e.preventDefault();
+    console.log("💜️---게시글등록----💜️", values);
+    // console.log("😺️--게시글등록----😺️", e.target.nickname);
+    // console.log("--오늘날짜--", today);
+
+    // input 박스 안에 넣은 값 등록하기
     axios
-      .get("http://localhost:8080/board")
+      .post("http://localhost:8080/board", {
+        content: values.content,
+        nickname: values.nickname,
+        // date: today,
+      })
       .then((res) => {
-        console.log(res.data); // 받아온 데이터 콘솔에 찍어보자
-        setContent(res.data); // setContent에 찐 내용인 response.data를 넣어준다.
+        console.log("🗨️🗨️🗨️🗨️🗨️🗨️----res.data", res.data);
+        alert("등록완료 !!");
+        // setContent(res.data);
+        // setNickname(res.data);
+        setValues(res.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
-
-  const onReset = () => {
-    setText("");
   };
+  // const { name, value } = e.target;
+  // setMessage((prevMessages) => ({
+  //   ...prevMessages,
+  //   [name]: value,
+  // }));
+  // console.log(e.target.value);
 
-  const onChange = (e) => {
-    console.log(e.target.value);
-    setText(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("----텍스트..--", values.content);
+    alert("안녕하세요" + values.nickname + values.content);
+
+    // // input 박스 안에 넣은 값 등록하기
+    // axios
+    //   .post("http://localhost:8080/board", {
+    //     content: values.content,
+    //     nickname: values.nickname,
+    //     date: today,
+    //   })
+    //   .then((res) => {
+    //     console.log("🗨️🗨️🗨️🗨️🗨️🗨️----res.data", res.data);
+    //     alert('등록완료 !!');
+    //     // setContent(res.data);
+    //     // setNickname(res.data);
+    //     setValues(res.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
-  const onClickButton = (e) => {
-    console.log("💜️---게시글등록----💜️", text);
-    alert("등록하기 ㅇㅇㅇㅇㅇ" + text);
-    // const { name, value } = e.target;
-    // setMessage((prevMessages) => ({
-    //   ...prevMessages,
-    //   [name]: value,
-    // }));
-    // console.log(e.target.value);
-  };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setText(e.target.value);
-
-  // };
 
   return (
     <div>
       bts에게 응원 한마디씩 부탁합니다~~
       <br />
-      {/* <form onSubmit={handleSubmit} style={{ border: "1px solid black" }}> */}
-      {/* <input type="text" name={nickname}/> */}
-      <input type="text" value={text} name="content" onChange={onChange} />
-      <button onClick={onReset}>초기화</button>
-      <button onClick={onClickButton}>등록하기 </button>
-      {/* </form> */}
-      <ul>
-        {content?.map((n) => (
-          <li key={n.id}>
-            {n.nickname}
-            <br />
-            {n.content}
-            <br />
-            {n.date}
-          </li>
-        ))}
-      </ul>
+      <form onSubmit={handleSubmit} style={{ border: "1px solid black" }}>
+        <input
+          type="text"
+          value={values.nickname || ""}
+          name="nickname"
+          onChange={onChange}
+          required
+          placeholder="닉네임"
+          // ref={textRef}
+        />
+        <input
+          type="text"
+          value={values.content || ""}
+          name="content"
+          onChange={onChange}
+          required
+          // ref={nicknameRef}
+        />
+        <button onClick={onReset}>초기화</button>
+        <button onClick={onClickButton}>등록하기 </button>
+      </form>
+      <List />
     </div>
   );
 };
