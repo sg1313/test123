@@ -68,7 +68,10 @@ const Board = () => {
 
   return (
     <div>
-      bts에게 응원 한마디씩 부탁합니다~~
+      <div className="titlefont">
+      BTS에게 따뜻한 응원 한마디 남겨주세요!
+
+      </div>
       <br />
       <form onSubmit={handleSubmit} style={{ border: "1px solid black" }}>
         <input

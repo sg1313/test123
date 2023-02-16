@@ -44,7 +44,9 @@ const Albums = () => {
 
   return (
     <div>
-      <h2>{`앨범 "${albums.albums}" 내용입니다`}</h2>
+      <div className="titlefont">
+      {`앨범 "${albums.albums}" 내용입니다`}
+      </div>
       <button onClick={onClickButton} style={{ border: "2px solid red" }}>
         {" "}
         뒤로가기{" "}
@@ -72,7 +74,7 @@ const Albums = () => {
         height="300px"
         alt="proof"
       ></img>
-      <div>
+      <div className="contentfont">
         앨범 소개 미니앨범인지, 정규앨범인지 디지털 어쩌구인지
         <br />
         {detail?.release}

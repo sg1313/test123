@@ -4,9 +4,13 @@ const About = () => {
   return (
     <div>
       <div>
-        아 이거 방탄소년단 아니에요 ~!
-        <p>About BTS</p>
-        <p>
+        <div className="titlefont">
+          ABOUT BTS
+        </div>
+        <div>
+          <img src="/images/bts_ptd.jpg" alt="bts"/>
+        </div>
+        <div className="contentfont">
           2013년 데뷔해 국내외 신인상을 휩쓴 방탄소년단은 명실상부 한국을
           대표하는 최정상 보이 그룹으로 성장했다. 전 세계적으로 방탄소년단
           열풍을 일으키며 ‘21세기 팝 아이콘’으로 불린다. 미국 빌보드, 영국
@@ -21,11 +25,13 @@ const About = () => {
           방탄소년단은 스타디움 투어를 개최하며 전 세계 콘서트 시장에서도 글로벌
           아티스트로서의 입지를 다져 왔으며, UN 연설과 LOVE MYSELF 캠페인 등을
           통해 선한 영향력을 실천하고 있다.
-        </p>
+        </div>
       </div>
       <div>
-        <p> MEMBER</p>
-        <ul>
+        <div className="titlefont">
+          MEMBER
+        </div>
+        <ul className="contentfont">
           <li>RM</li>
           <li>JIN</li>
           <li>SUGA</li>

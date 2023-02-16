@@ -21,7 +21,7 @@ const Discography = () => {
     <div>
       <p>앨범명을 클릭하면 상세페이지로 이동</p>
 
-      <div>
+      <div className="contentfont">
         <ul>
           <li>
             <Link to="/discography/proof">Proof</Link>

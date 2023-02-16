@@ -19,7 +19,9 @@ const List = () => {
   }, []);
 
   return (
-    <ul>
+    <div>
+
+    <ul className="contentfont">
       {content?.map((n) => (
         <li key={n.id}>
           {n.nickname}
@@ -30,6 +32,7 @@ const List = () => {
         </li>
       ))}
     </ul>
+      </div>
   );
 };
 
