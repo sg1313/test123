@@ -29,17 +29,25 @@
 .member {
   text-align: center;
   color: white;
+  display: flex;
 }
 
 li {
   margin: 10px 0;
 }
 
-.memberlist {
+.memberimg {
   border: 1px solid white;
 }
 
 li img {
   width: 300px;
   height: 300px;
+}
+
+.memberinfo {
+    margin : auto 20px;
+    background-color: blue;
+    font-size: 50px;
+    font-weight: 500;
 }

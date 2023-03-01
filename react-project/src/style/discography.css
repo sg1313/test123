@@ -1,0 +1,13 @@
+p {
+  text-align: center;
+}
+
+.album-list {
+  border: 1px dotted blue;
+  height: 200px;
+}
+
+.album-list li {
+  float: left;
+  margin: 10px;
+}

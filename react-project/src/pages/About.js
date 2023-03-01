@@ -7,7 +7,7 @@ const About = () => {
       <div className="group">
         <div className="titlefont">
           <h1>ABOUT BTS</h1>
-          </div>
+        </div>
         <br/>
         <div className="about">
           <div className="aboutpic">
@@ -41,20 +41,65 @@ const About = () => {
         </div>
         <div className="member">
         <ul className="contentfont">
-          <li>
-            <div className="memberlist">
+          <li className="about">
+            <div className="memberimg">
               <img src="https://ibighit.com/bts/images/profile/proof/member/member-rm.jpg" alt="rm.jpg"/>
-          <div>
-            리더/메인래퍼/1994.09.12
             </div>
+            <div className="memberinfo">
+            RM <br/>리더/메인래퍼/1994.09.12
               </div>
-            </li>
-          <li>JIN 보컬/1992.12.04</li>
-          <li>SUGA 래퍼/1993.03.09</li>
-          <li>JHOPE 래퍼/메인댄서/1994.02.18</li>
-          <li>JIMIN 보컬/1995.10.13</li>
-          <li>V 보컬/1995.12.30</li>
-          <li>JK 보컬/메인보컬/1997.09.01</li>
+          </li>
+          <li className="about">
+            <div className="memberimg">
+              <img src="https://ibighit.com/bts/images/profile/proof/member/member-jin.jpg" alt="jin.jpg"/>
+              </div>
+              <div className="memberinfo">
+
+              JIN 보컬/1992.12.04
+              </div>
+          </li>
+          <li className="about">
+            <div className="memberimg">
+              <img src="https://ibighit.com/bts/images/profile/proof/member/member-suga.jpg" alt="suga.jpg"/>
+              </div>
+              <div className="memberinfo">
+
+              SUGA 래퍼/1993.03.09
+              </div>
+          </li>
+          <li className="about">
+            <div className="memberimg">
+              <img src="https://ibighit.com/bts/images/profile/proof/member/member-jhope.jpg" alt="jhope.jpg"/>
+              </div>
+              <div className="memberinfo">
+              JHOPE 래퍼/메인댄서/1994.02.18
+              </div>
+          </li>
+          <li className="about">
+            <div className="memberimg">
+              <img src="https://ibighit.com/bts/images/profile/proof/member/member-jimin.jpg" alt="jimin.jpg"/>
+              </div>
+              <div className="memberinfo">
+              JIMIN 보컬/1995.10.13
+              </div>
+          </li>
+          <li className="about">
+            <div className="memberimg">
+              <img src="https://ibighit.com/bts/images/profile/proof/member/member-v.jpg" alt="v.jpg"/>
+              </div>
+              <div className="memberinfo">
+              V 보컬/1995.12.30
+              </div>
+          </li>
+          <li className="about">
+            <div className="memberimg">
+              <img src="https://ibighit.com/bts/images/profile/proof/member/member-jk.jpg" alt="jk.jpg"/>
+              </div>
+              <div className="memberinfo">
+              JK 보컬/메인보컬/1997.09.01
+              </div>
+          </li>
+
         </ul>
         </div>
       </div>

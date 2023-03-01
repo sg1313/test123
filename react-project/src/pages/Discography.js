@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../style/discography.css";
 
 const Discography = () => {
   // const [detail, setDetail] = useState(false); // 현재 false 니까
@@ -19,76 +20,106 @@ const Discography = () => {
 
   return (
     <div>
-      <p>앨범명을 클릭하면 상세페이지로 이동</p>
-
-      <div className="contentfont">
+      <div className="titlefont">
+          <h1>DISCOGRAPHY</h1>
+        </div>
+      <p>앨범명을 클릭하시면 상세페이지로 이동합니다</p>
+      
+      <div className="album-list">
         <ul>
           <li>
-            <Link to="/discography/proof">Proof</Link>
-          </li>
-          <li>
-            <Link to="/discography/permission_to_dance">
-              Permission To Dance
+            <Link to="/discography/proof">
+            <img src="https://ibighit.com/bts/images/bts/discography/proof/discography-cover.png" alt="proof"/>
             </Link>
           </li>
           <li>
-            <Link to="/discography/butter">BUTTER</Link>
+            <Link to="/discography/permission_to_dance">
+            <img src="https://ibighit.com/bts/images/bts/discography/butter-2/butter-2-cover.jpg" alt="ptd"/>
+            </Link>
           </li>
           <li>
-            <Link to="/discography/Be">BE</Link>
+            <Link to="/discography/butter">
+              <img src="https://ibighit.com/bts/images/bts/discography/butter/butter-cover.jpg" alt="butter"/>
+            </Link>
           </li>
           <li>
-            <Link to="/discography/dynamite">DYNAMITE</Link>
+            <Link to="/discography/Be">
+              <img src="https://ibighit.com/bts/images/bts/discography/be/rwXJxHlQ87gEiJJynB1pmScl.jpg" alt="be"/>
+            </Link>
           </li>
           <li>
-            <Link to="/discography/map_of_the_soul_7">map of the soul 7</Link>
+            <Link to="/discography/dynamite">
+              <img src="https://ibighit.com/bts/images/bts/discography/dynamite/Q7gBkUusiDcIYljQOMX9ow6W.jpg" alt="dynamite"/>
+            </Link>
+          </li>
+          <li>
+            <Link to="/discography/map_of_the_soul_7">
+              <img src="https://ibighit.com/bts/images/bts/discography/map_of_the_soul-7/img01.jpg" alt="mapsoul7"/>
+            </Link>
           </li>
           <li>
             <Link to="/discography/map_of_the_soul_persona">
-              map of the soul Persona
+            <img src="https://ibighit.com/bts/images/bts/discography/map_of_the_soul-persona/album-cover.jpg" alt="persona"/>
             </Link>
           </li>
           <li>
             <Link to="/discography/love_yourself_answer">
-              LoveYourlsef Answer
+              <img src="https://ibighit.com/bts/images/bts/discography/love_yourself-answer/album-cover.jpg" alt="answer"/>
             </Link>
           </li>
           <li>
-            <Link to="/discography/love_yourself_tear">LoveYourlsef Tear</Link>
+            <Link to="/discography/love_yourself_tear">
+              <img src="https://ibighit.com/bts/images/bts/discography/love_yourself-tear/album-cover.jpg" alt="tear"/>
+            </Link>
           </li>
           <li>
-            <Link to="/discography/love_yourself_her">LoveYourlsef Her</Link>
+            <Link to="/discography/love_yourself_her">
+              <img src="https://ibighit.com/bts/images/bts/discography/love_yourself-her/album-cover.jpg" alt="her"/>
+            </Link>
           </li>
           <li>
             <Link to="/discography/you_never_walk_alone">
-              you never walk alone
+              <img src="https://ibighit.com/bts/images/bts/discography/you_never_walk_alone/album-cover.jpg" alt="ynwa"/>
             </Link>
           </li>
           <li>
-            <Link to="/discography/wings">wings</Link>
+            <Link to="/discography/wings">
+              <img src="https://ibighit.com/bts/images/bts/discography/wings/album-cover.jpg" alt="wings"/>
+            </Link>
           </li>
           <li>
             <Link to="/discography/hyyh_young_forever">
-              화양연화 young forever
+              <img src="https://ibighit.com/bts/images/bts/discography/young_forever/album-cover.jpg" alt="yongforever"/>
             </Link>
           </li>
           <li>
-            <Link to="/discography/hyyh_pt2">화양연화 pt.2</Link>
+            <Link to="/discography/hyyh_pt2">
+              <img src="https://ibighit.com/bts/images/bts/discography/hwayangyeonhwa-pt2/album-cover.jpg" alt="pt2"/>
+            </Link>
           </li>
           <li>
-            <Link to="/discography/hyyh_pt1">화양연화 pt.1</Link>
+            <Link to="/discography/hyyh_pt1">
+              <img src="https://ibighit.com/bts/images/bts/discography/hwayangyeonhwa-pt1/album-cover.jpg" alt="pt1"/>
+            </Link>
           </li>
           <li>
-            <Link to="/discography/dark_and_wild">dark and wild</Link>
+            <Link to="/discography/dark_and_wild">
+              <img src="https://ibighit.com/bts/images/bts/discography/dark_and_wild/album-cover.jpg" alt="darknwild"/>
+            </Link>
           </li>
           <li>
-            <Link to="/discography/skool_luv_affair">skool luv affair</Link>
+            <Link to="/discography/skool_luv_affair">
+              <img src="https://ibighit.com/bts/images/bts/discography/skool_luv_affair/album-cover.jpg" alt="boyinluv"/></Link>
           </li>
           <li>
-            <Link to="/discography/orul82">o ru l8 2</Link>
+            <Link to="/discography/orul82">
+              <img src="https://ibighit.com/bts/images/bts/discography/o_rul8_2/album-cover.jpg" alt="weon"/>
+            </Link>
           </li>
           <li>
-            <Link to="/discography/2cool4skool">2cool4skool</Link>
+            <Link to="/discography/2cool4skool">
+              <img src="https://ibighit.com/bts/images/bts/discography/2_cool_4_school/album-cover.jpg" alt="nomoredream"/>
+            </Link>
           </li>
         </ul>
       </div>
