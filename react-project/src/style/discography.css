@@ -3,11 +3,12 @@ p {
 }
 
 .album-list {
-  border: 1px dotted blue;
+  border: 5px solid blue;
   height: 200px;
+  display: inline;
 }
 
-.album-list li {
+.album-list ul li {
   float: left;
   margin: 10px;
 }
