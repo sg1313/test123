@@ -59,7 +59,7 @@ const Albums = () => {
         src={`/images/${detail?.image}`}
         width="300px"
         height="300px"
-        alt="proof"
+        alt={`${detail?.name}`}
       ></img>
       <div className="contentfont">
       <div className="box1">
