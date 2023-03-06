@@ -1,0 +1,25 @@
+.box1 {
+  border: 1px solid blue;
+  color: white;
+}
+
+.box2{
+  border: 1px solid red;
+  color: white;
+}
+
+.box3 {
+  border: 1px solid fuchsia;
+  color: white;
+}
+
+.box4 {
+  border: 1px solid seagreen;
+  color: white;
+}
+
+.box5 {
+  white-space: pre-line;
+  border: 1px solid skyblue;
+  color: white;
+}

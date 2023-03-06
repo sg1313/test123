@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import "../style/albums.css";
 
 const Albums = () => {
   const [isOpen, setOpen] = useState();
@@ -51,23 +52,9 @@ const Albums = () => {
         {" "}
         뒤로가기{" "}
       </button>
-      <div style={{ border: "1px solid black", width: "200px" }}>
-        앨범 내용 최고야 개쩜 ㅇㅇ
-        <button
-          onClick={() => {
-            setOpen((e) => !e);
-          }}
-        >
-          {isOpen ? "간략히" : "더보기"}
-        </button>
-      </div>
-      {isOpen && (
-        <div>
-          앨범 상세 내용 입니다 <br /> {detail?.content}{" "}
-        </div>
-      )}
+
       <br />
-      <div>--------이미지 오는 자리-----------</div>
+      <p>--------이미지 오는 자리-----------</p>
       <img
         src={`/images/${detail?.image}`}
         width="300px"
@@ -75,17 +62,37 @@ const Albums = () => {
         alt="proof"
       ></img>
       <div className="contentfont">
-        앨범 소개 미니앨범인지, 정규앨범인지 디지털 어쩌구인지
-        <br />
-        {detail?.release}
-        <br />
-        {detail?.info}
+      <div className="box1">
+        앨범 내용 간단히 소개하기 
+        <button
+          onClick={() => {
+            setOpen((e) => !e);
+          }}
+        >
+          {isOpen ? "간략히" : "더보기"}
+        </button>
+      {isOpen && (
+        <div>
+          앨범 상세 내용 입니다 <br /> {detail?.content}{" "}
+        </div>
+      )}
       </div>
-      <div className="contentfont">뮤직비디오</div>
-      <div className="contentfont" style={{ whiteSpace: "pre-line" }}>
+      <br/>
+      <div className="box2">
+        RELEASE : {detail?.release}
+      </div>
+      <br/>
+      <div className="box3">
+       INFO :  {detail?.info}
+      </div>
+      <br/>
+      <div className="box4">뮤직비디오</div>
+      <br/>
+      <div className="box5">
         트랙리스트
         <br />
         {detail?.tracklist}
+      </div>
       </div>
     </div>
   );
