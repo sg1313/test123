@@ -8,10 +8,10 @@ const Albums = () => {
   const [detail, setDetail] = useState();
 
   const albums = useParams();
-  console.log("🎹️params--->", albums);
-  console.log("🎶️앨범명:", albums.albums, "페이지 접속 !!");
+  // console.log("🎹️params--->", albums);
+  // console.log("🎶️앨범명:", albums.albums, "페이지 접속 !!");
   const albumName = albums.albums;
-  console.log("🎵️--------albumName : ", albumName);
+  // console.log("🎵️--------albumName : ", albumName);
 
   useEffect(() => {
     axios
@@ -23,6 +23,10 @@ const Albums = () => {
           "🔵️🔵️🔵️🔵️🔵️🔵️response.data.name 갖고오기🔵️🔵️🔵️🔵️🔵️🔵️",
           response.data.name
         );
+        // const axioscontent = response.data.content;
+        // console.log("💚💚콘텐트내용------", axioscontent);
+        const str = response.data.content.replace(/\\r\\n/g,"<br/>");
+        console.log("🖤🖤", str);
         setDetail(response.data); // setDetail에 받아온 response.data 넣기
       })
       .catch((error) => {
@@ -30,8 +34,8 @@ const Albums = () => {
       });
   }, []);
 
-  console.log("🍎️-----deatil-----🍎️", detail);
-  console.log("💜️----deatail.name----💜️", detail?.name);
+  // console.log("🍎️-----deatil-----🍎️", detail);
+  // console.log("💜️----deatail.name----💜️", detail?.name);
   // const albuminfo = Object?.values(detail);
   // console.log("---albuminfo---", albuminfo);
   // console.log("----옵셔널체이닝 외않되---", albuminfo)
@@ -63,19 +67,24 @@ const Albums = () => {
       ></img>
       <div className="contentfont">
       <div className="box1">
-        앨범 내용 간단히 소개하기 
-        <button
+        {/* <button
           onClick={() => {
             setOpen((e) => !e);
           }}
         >
           {isOpen ? "간략히" : "더보기"}
-        </button>
-      {isOpen && (
+        </button> */}
+      {/* {isOpen && ( */}
         <div>
-          앨범 상세 내용 입니다 <br /> {detail?.content}{" "}
+          ----------앨범 상세 내용-------------
+          <br/>
+          {detail?.content.split('\\r\\n').map(line => {
+            return (
+              <span key={line.id}>{line}<br/></span>
+            )
+          })}
         </div>
-      )}
+      {/* )} */}
       </div>
       <br/>
       <div className="box2">

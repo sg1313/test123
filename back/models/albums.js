@@ -14,9 +14,8 @@ module.exports = function(sequelize, DataTypes) {
       comment: "앨범명"
     },
     content: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      comment: "앨범소개"
+      type: DataTypes.STRING(255),
+      allowNull: true
     },
     info: {
       type: DataTypes.STRING(100),
