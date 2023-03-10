@@ -13,8 +13,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       comment: "앨범명"
     },
+    albumname: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
     content: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(2000),
       allowNull: true
     },
     info: {
@@ -28,9 +32,8 @@ module.exports = function(sequelize, DataTypes) {
       comment: "앨범커버"
     },
     tracklist: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      comment: "트랙리스트"
+      type: DataTypes.STRING(500),
+      allowNull: true
     },
     release: {
       type: DataTypes.DATEONLY,

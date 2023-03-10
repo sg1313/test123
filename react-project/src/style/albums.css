@@ -1,25 +1,48 @@
+button {
+  border: 1px dotted orange;
+}
+
+.uppergroup {
+  padding: 10px;
+  height: auto;
+  border: 1px solid rgb(30, 255, 0);
+  display: flex;
+}
+
+.uppergroup-right {
+  border: 1px solid slateblue;
+  margin: auto 20px;
+}
+
 .box1 {
   border: 1px solid blue;
   color: white;
 }
 
-.box2{
-  border: 1px solid red;
-  color: white;
+.box2 {
+  border : 1px solid white;
+  color: white
+  ;
 }
+
+.subtitle {
+  border-bottom: 1px solid red;
+  margin-bottom: 10px;
+}
+
+
 
 .box3 {
-  border: 1px solid fuchsia;
-  color: white;
-}
-
-.box4 {
-  border: 1px solid seagreen;
-  color: white;
-}
-
-.box5 {
   white-space: pre-line;
   border: 1px solid skyblue;
   color: white;
+}
+
+span {
+  font-size: 30px;
+}
+
+td {
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
 }

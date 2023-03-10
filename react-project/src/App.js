@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "./components/Navigation";
 import Router from "./components/Router";
 import "./style/common.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

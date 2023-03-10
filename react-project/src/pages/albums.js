@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "../style/albums.css";
+import Button from 'react-bootstrap/Button'
 
 const Albums = () => {
-  const [isOpen, setOpen] = useState();
+  // const [isOpen, setOpen] = useState();
   const [detail, setDetail] = useState();
 
   const albums = useParams();
   // console.log("🎹️params--->", albums);
   // console.log("🎶️앨범명:", albums.albums, "페이지 접속 !!");
-  const albumName = albums.albums;
+  // const albumName = albums.albums;
   // console.log("🎵️--------albumName : ", albumName);
 
   useEffect(() => {
@@ -49,23 +50,24 @@ const Albums = () => {
 
   return (
     <div>
-      <div className="titlefont">
-      {`앨범 "${albums.albums}" 내용입니다`}
-      </div>
-      <button onClick={onClickButton} style={{ border: "2px solid red" }}>
+      <Button 
+      variant="outline-primary"
+      onClick={onClickButton} className="botton">
         {" "}
         뒤로가기{" "}
-      </button>
-
+      </Button>
       <br />
-      <p>--------이미지 오는 자리-----------</p>
+      <div className="uppergroup">
+
       <img
         src={`/images/${detail?.image}`}
-        width="300px"
-        height="300px"
         alt={`${detail?.name}`}
-      ></img>
-      <div className="contentfont">
+        />
+        <div className="uppergroup-right">
+        <div className="titlefont">
+        {detail?.albumname}
+        {/* {`앨범 "${albums.albums}" 내용입니다`} */}
+      </div>
       <div className="box1">
         {/* <button
           onClick={() => {
@@ -75,32 +77,53 @@ const Albums = () => {
           {isOpen ? "간략히" : "더보기"}
         </button> */}
       {/* {isOpen && ( */}
-        <div>
+        <div className="contentfont">
           ----------앨범 상세 내용-------------
           <br/>
           {detail?.content.split('\\r\\n').map(line => {
             return (
-              <span key={line.id}>{line}<br/></span>
+              <div key={line.id}>{line}<br/></div>
             )
           })}
         </div>
       {/* )} */}
       </div>
+        </div>
+        </div>
+      <div className="contentfont">
+
       <br/>
       <div className="box2">
-        RELEASE : {detail?.release}
+        <div className="subtitle">
+        <span>INFO</span>
+        </div>
+
+        {detail?.info}
+        <br/>
+        RELEASE {detail?.release}
       </div>
       <br/>
       <div className="box3">
-       INFO :  {detail?.info}
-      </div>
-      <br/>
-      <div className="box4">뮤직비디오</div>
-      <br/>
-      <div className="box5">
-        트랙리스트
-        <br />
-        {detail?.tracklist}
+        <div className="subtitle"> 
+        <span>Track List</span>
+        </div>
+        {/* {detail?.tracklist} */}
+
+        {detail?.tracklist.split('\\r\\n').map(line => {
+          return (
+            <table>
+              <colgroup>
+              <col width="300px"></col>
+              </colgroup>
+              <tbody>
+              <tr>
+                <td key={line.id}>{line}<br/></td>
+              </tr>
+              </tbody>
+            </table>
+              // <span key={line.id}>{line}<br/></span>
+              )
+            })}
       </div>
       </div>
     </div>

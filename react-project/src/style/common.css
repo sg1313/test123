@@ -5,7 +5,7 @@
 .titlefont {
     font-family: 'Black Han Sans', sans-serif;
     font-size: 50px;
-    text-align: center;
+    text-align: left;
 }
 .contentfont {
     font-family: 'Nanum Gothic', sans-serif;
@@ -14,8 +14,10 @@
 
 body {
     background: url("../../public/images/HYYHbts.jpeg");
-    /* background-color:beige; */
+    /* background-color:rgb(32, 31, 31); */
     background-size: cover;
+    width: 1000px;
+    align-items: center;
 }
 
 li {
