@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
 import List from "./List";
+import Form from 'react-bootstrap/Form';
 
 // const getData = async () => {
 //   try {
@@ -74,6 +75,13 @@ const Board = () => {
       </div>
       <br />
       <form onSubmit={handleSubmit} style={{ border: "1px solid black" }}>
+      <Form.Control size="lg" type="text" placeholder="닉네임" />
+      <Form.Control
+          as="textarea"
+          placeholder="내용을 입력하세요"
+          style={{ height: '100px' }}
+        />
+
         <input
           type="text"
           value={values.nickname || ""}

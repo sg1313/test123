@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import {Button} from 'react-bootstrap';
 import "../style/albums.css";
-import Button from 'react-bootstrap/Button'
 
 const Albums = () => {
   // const [isOpen, setOpen] = useState();
@@ -50,9 +50,8 @@ const Albums = () => {
 
   return (
     <div>
-      <Button 
-      variant="outline-primary"
-      onClick={onClickButton} className="botton">
+      <Button variant="dark"
+      onClick={onClickButton}>
         {" "}
         뒤로가기{" "}
       </Button>
