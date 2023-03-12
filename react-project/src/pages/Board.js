@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import List from "./List";
 import Form from 'react-bootstrap/Form';
+import "../style/board.css";
 
 // const getData = async () => {
 //   try {
@@ -68,20 +69,36 @@ const Board = () => {
   };
 
   return (
-    <div>
+    <div className="wrapper">
       <div className="titlefont">
       BTS에게 따뜻한 응원 한마디 남겨주세요!
-
       </div>
       <br />
-      <form onSubmit={handleSubmit} style={{ border: "1px solid black" }}>
-      <Form.Control size="lg" type="text" placeholder="닉네임" />
-      <Form.Control
+      <form onSubmit={handleSubmit} className="box1">
+      <Form.Group className="text-1">
+        <Form.Label>닉네임</Form.Label>
+        <Form.Control type="text"
+          value={values.nickname || ""}
+          name="nickname"
+          onChange={onChange}
+          required ref={nicknameRef}/>
+      </Form.Group>
+      <Form.Group className="text-1">
+        <Form.Label>내용</Form.Label>
+        <div className="text-2">💜최대 100글자 까지 입력이 가능합니다.</div>
+        <Form.Control
           as="textarea"
-          placeholder="내용을 입력하세요"
-          style={{ height: '100px' }}
-        />
-
+          rows={4}
+          className="textarea"
+          value={values.content || ""}
+          name="content"
+          onChange={onChange}
+          required
+          ref={contentRef}
+          maxLength={100}
+          />
+      </Form.Group>
+{/* 
         <input
           type="text"
           value={values.nickname || ""}
@@ -90,19 +107,22 @@ const Board = () => {
           required
           placeholder="닉네임"
           ref={nicknameRef}
-        />
-        <input
+        /> */}
+        {/* <input
           type="text"
           value={values.content || ""}
           name="content"
           onChange={onChange}
           required
           ref={contentRef}
-        />
+        /> */}
         <button onClick={onReset}>초기화</button>
         <button onClick={onClickButton}>등록하기 </button>
       </form>
+      <div className="list">
+
       <List />
+      </div>
     </div>
   );
 };

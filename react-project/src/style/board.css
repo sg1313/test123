@@ -1,0 +1,26 @@
+.wrapper {
+  border: 2px solid slateblue;
+}
+
+.box1{
+  border: 2px solid seagreen;
+  width: 800px;
+}
+
+.text-1 {
+  border: 1px solid red;
+}
+
+.text-2 {
+  color: blueviolet;
+  font-weight: bold;
+  margin-top: -0.5rem;
+}
+
+.textarea{
+  resize: none;
+}
+
+.list {
+  border: 2px solid white;
+}
