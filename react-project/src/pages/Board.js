@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
 import List from "./List";
-import Form from 'react-bootstrap/Form';
+import {Form, Button} from 'react-bootstrap';
 import "../style/board.css";
 
 // const getData = async () => {
@@ -116,6 +116,8 @@ const Board = () => {
           required
           ref={contentRef}
         /> */}
+         <Button variant="dark" onClick={onReset} className="reset">초기화</Button>
+         <Button variant="dark" onClick={onClickButton}>등록하기</Button>
         <button onClick={onReset}>초기화</button>
         <button onClick={onClickButton}>등록하기 </button>
       </form>

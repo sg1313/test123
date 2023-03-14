@@ -1,0 +1,37 @@
+.arrow_box {
+	position: relative;
+	background: #000000;
+	/* border: 1px solid #be4fff; */
+  border-radius: 15px;
+  padding : 10px 10px 10px 30px;
+  width : 500px;
+  /* margin-left: 30px; */
+  margin-top: 30px;
+  
+}
+.arrow_box:after {
+	bottom: 100%;
+	left: 10%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-left: 0;
+	border-bottom-color: #ffffff;
+	border-width: 20px;
+	margin-left: -20px;
+}
+
+
+
+.text-3 {
+  border: 2px solid white;
+  color: white;
+}
+
+.text-3-n {
+  border: 2px dotted skyblue;
+}

@@ -21,6 +21,10 @@
   resize: none;
 }
 
+.reset {
+  margin: 10px;
+}
+
 .list {
   border: 2px solid white;
 }
