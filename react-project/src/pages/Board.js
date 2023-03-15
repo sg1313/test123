@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import List from "./List";
 import {Form, Button} from 'react-bootstrap';
@@ -25,7 +25,7 @@ const Board = () => {
     // date: today,
   });
 
-  const { contentRef, nicknameRef } = useRef();
+  // const { contentRef, nicknameRef } = useRef();
 
   const onReset = () => {
     setValues("");
@@ -42,14 +42,17 @@ const Board = () => {
 
   const onClickButton = (e) => {
     console.log("💜️---게시글등록----💜️", values);
-
+    const userData = {
+      nickname : values.nickname,
+      content : values.content
+    };
     // input 박스 안에 넣은 값 등록하기
     axios
-      .post("http://localhost:8080/board", {
-        content: contentRef.current.value,
-        nickname: nicknameRef.current.value,
+      .post("http://localhost:8080/board", userData
+        // content: contentRef.current.value,
+        // nickname: nicknameRef.current.value,
         // date: today,
-      })
+      )
       .then((res) => {
         console.log("🗨️🗨️🗨️🗨️🗨️🗨️----res.data", res.data);
         alert("등록완료 !!");
@@ -63,7 +66,7 @@ const Board = () => {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     // 등록하기 버튼 누르면 알람창 이게 먼저 뜨네 ...
     alert(`등록내용 : ${values.nickname} & ${values.content}`);
   };
@@ -74,16 +77,18 @@ const Board = () => {
       BTS에게 따뜻한 응원 한마디 남겨주세요!
       </div>
       <br />
-      <form onSubmit={handleSubmit} className="box1">
-      <Form.Group className="text-1">
+      <Form onSubmit={handleSubmit} className="box1">
+      <Form.Group className="text-1-n">
         <Form.Label>닉네임</Form.Label>
         <Form.Control type="text"
           value={values.nickname || ""}
           name="nickname"
           onChange={onChange}
-          required ref={nicknameRef}/>
+          required 
+          // ref={nicknameRef}
+          maxLength={10}/>
       </Form.Group>
-      <Form.Group className="text-1">
+      <Form.Group className="text-1-c">
         <Form.Label>내용</Form.Label>
         <div className="text-2">💜최대 100글자 까지 입력이 가능합니다.</div>
         <Form.Control
@@ -94,33 +99,15 @@ const Board = () => {
           name="content"
           onChange={onChange}
           required
-          ref={contentRef}
+          // ref={contentRef}
           maxLength={100}
           />
       </Form.Group>
-{/* 
-        <input
-          type="text"
-          value={values.nickname || ""}
-          name="nickname"
-          onChange={onChange}
-          required
-          placeholder="닉네임"
-          ref={nicknameRef}
-        /> */}
-        {/* <input
-          type="text"
-          value={values.content || ""}
-          name="content"
-          onChange={onChange}
-          required
-          ref={contentRef}
-        /> */}
-         <Button variant="dark" onClick={onReset} className="reset">초기화</Button>
-         <Button variant="dark" onClick={onClickButton}>등록하기</Button>
-        <button onClick={onReset}>초기화</button>
-        <button onClick={onClickButton}>등록하기 </button>
-      </form>
+         <Button variant="dark" onClick={onReset} className="reset" type="button">초기화</Button>
+         <Button variant="dark" onClick={onClickButton} type="submit">등록하기</Button>
+        {/* <button onClick={onReset}>초기화</button>
+        <button onClick={onClickButton}>등록하기 </button> */}
+      </Form>
       <div className="list">
 
       <List />

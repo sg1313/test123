@@ -3,6 +3,7 @@ const board = require("./models/board");
 const models = require("./models/index");
 const cors = require("cors");
 const path = require("path");
+const sequelize = require("sequelize");
 
 const app = express();
 
@@ -33,7 +34,13 @@ app.get("/board", async (req, res, next) => {
   console.log("-----board게시판----");
 
   const board = await models.board.findAll({
+    attributes: {
+      include : [
+        [sequelize.fn("DATE_FORMAT", sequelize.col("date"), "%y.%m.%d",),"date"]
+      ]
+    },
     raw: true,
+    order : [['date', 'desc']]
   });
   console.log(board);
   res.json(board);

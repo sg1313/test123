@@ -19,35 +19,8 @@ const List = () => {
       });
   }, []);
 
-
-    const onClickdate = () => {
-      const list = document.getElementsByClassName("text-3-date");
-      for (let i = 0; i < list.length; i++) {
-        //  각 list 요소 출력
-        // console.log('리스트~~~~~', list[i].innerText);
-        const innertext = list[i].innerText;
-        const car = new Date(innertext);
-        // const newcar = car.getFullYear(car);
-        // console.log('---등록날짜 가져오기~~~', car.getDate());
-        const map = {
-          mm : car.getMonth() + 1,
-          dd : car.getDate(),
-          yyyy : car.getFullYear()
-        }
-        
-      };
-      const output = `${yyyy}년 ${mm}월 ${dd}일`;
-
-      
-      }
-
-    const formatDate = (date, format) => {
-
-      }
-
   return (
     <div>
-      <button onClick={onClickdate}>날짜전체보기</button>
     <ul className="contentfont">
       {content?.map((n) => (
         <li key={n.id} className="text-3">

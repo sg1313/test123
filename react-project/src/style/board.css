@@ -7,8 +7,13 @@
   width: 800px;
 }
 
-.text-1 {
+.text-1-n{
   border: 1px solid red;
+  width: 300px;
+}
+
+.text-1-c {
+  border: 1px solid greenyellow;
 }
 
 .text-2 {
