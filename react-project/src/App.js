@@ -6,10 +6,8 @@ import "./style/common.css";
 
 function App() {
   return (
-    <div>
+    <div className="wrapper">
       <Navigation />
-      리액트로 만든 App.js 페이지 입니다 ~~ cd react-project 해야지 이
-      페이지가뜸
       <Router />
     </div>
   );

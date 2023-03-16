@@ -6,7 +6,7 @@ const About = () => {
     <div>
       <div className="group">
         <div className="titlefont">
-          <h1>ABOUT BTS</h1>
+          <div className="a-title">ABOUT BTS</div>
         </div>
         <br/>
         <div className="about">

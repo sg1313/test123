@@ -2,6 +2,10 @@
   border: 2px solid black;
 }
 
+.a-title {
+  text-align: center;
+}
+
 .about {
   padding: 10px;
   height: auto;

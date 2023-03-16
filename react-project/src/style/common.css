@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
+.wrapper {
+    margin: 0px auto;
+}
 
 .titlefont {
     font-family: 'Black Han Sans', sans-serif;

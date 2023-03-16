@@ -66,13 +66,13 @@ const Board = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // 등록하기 버튼 누르면 알람창 이게 먼저 뜨네 ...
     alert(`등록내용 : ${values.nickname} & ${values.content}`);
   };
 
   return (
-    <div className="wrapper">
+    <div className="b-wrapper">
       <div className="titlefont">
       BTS에게 따뜻한 응원 한마디 남겨주세요!
       </div>

@@ -36,7 +36,7 @@ app.get("/board", async (req, res, next) => {
   const board = await models.board.findAll({
     attributes: {
       include : [
-        [sequelize.fn("DATE_FORMAT", sequelize.col("date"), "%y.%m.%d",),"date"]
+        [sequelize.fn("DATE_FORMAT", sequelize.col("date"), "%Y.%m.%d %H:%i",),"date"]
       ]
     },
     raw: true,

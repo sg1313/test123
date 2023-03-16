@@ -1,27 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Nav from 'react-bootstrap/Nav';
 import "../style/navigation.css";
 
 const Navigation = () => {
   return (
     <div className="nav">
-      <ul
+      <Nav className="justify-content-center" as="ul">
+      {/* <ul
         style={{
           display: "flex",
           justifyContent: "center",
           margin: "30px 0",
         }}
-      >
-        <li>
-          <Link to="/">HOME</Link>
-        </li>
-        <li>
-          <Link to="/discography">DISCOGRAPHY</Link>
-        </li>
-        <li>
-          <Link to="/board">BOARD</Link>
-        </li>
-      </ul>
+      > */}
+        <Nav.Item as="li">
+          <Nav.Link href="/">HOME</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link href="/discography">DISCOGRAPHY</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link href="/board">BOARD</Nav.Link>
+        </Nav.Item>
+      {/* </ul> */}
+      </Nav>
     </div>
   );
 };
