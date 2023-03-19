@@ -54,8 +54,8 @@ const Board = () => {
         // date: today,
       )
       .then((res) => {
-        console.log("🗨️🗨️🗨️🗨️🗨️🗨️----res.data", res.data);
-        alert("등록완료 !!");
+        console.log("🗨️🗨️res.data", res.data);
+        alert("등록시간 ", res.data.date);
         // setContent(res.data);
         // setNickname(res.data);
         setValues(res.data);
