@@ -3,8 +3,8 @@
 	background: #000000;
 	/* border: 1px solid #be4fff; */
   border-radius: 15px;
-  padding : 10px 10px 10px 30px;
-  width : 500px;
+  padding : 10px 30px;
+  width : 100%;
   /* margin-left: 30px; */
   margin-top: 30px;
   
@@ -20,7 +20,7 @@
 	pointer-events: none;
   border-color: rgba(255, 255, 255, 0);
   border-left: 0;
-	border-bottom-color: #ffffff;
+	border-bottom-color: #000000;
 	border-width: 20px;
 	margin-left: -20px;
 }
@@ -28,10 +28,12 @@
 
 
 .text-3 {
-  border: 2px solid white;
-  color: white;
+	margin: 15px 30px 15px 0px;
 }
 
 .text-3-n {
-  border: 2px dotted skyblue;
+	background-color: rgba(255, 255, 255, 0.452);
+	width: 300px;
+	border-radius: 10px;
+	padding-left: 10px;
 }

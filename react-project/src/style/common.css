@@ -3,24 +3,32 @@
 
 .wrapper {
     margin: 0px auto;
+    width: 1000px;
 }
 
 .titlefont {
     font-family: 'Black Han Sans', sans-serif;
     font-size: 50px;
-    text-align: left;
+    text-align: center;
+    color: white;
 }
+
+.titlefont2 {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
 .contentfont {
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 20px;
 }
 
 body {
-    background: url("../../public/images/HYYHbts.jpeg");
+    background: url("../../public/images/btssytour_thefinal.jpg") no-repeat center fixed;
     /* background-color:rgb(32, 31, 31); */
     background-size: cover;
-    width: 1000px;
     align-items: center;
+    height: 100vh;
 }
 
 li {

@@ -4,16 +4,14 @@
 .nav li {
     padding: 10px 20px 10px 20px;
     font-size: 40px;
-    border: 2px solid white;
 }
 
 .nav {
-    border: 2px solid sandybrown;
     margin: 0px auto;
 }
 
 a.nav-link {
-    color: black;
+    color: white;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 35px;
 }

@@ -21,9 +21,9 @@ const Discography = () => {
   return (
     <div>
       <div className="titlefont">
-          <h1>DISCOGRAPHY</h1>
+      <div className="titlefont2">DISCOGRAPHY</div>
         </div>
-      <p>앨범명을 클릭하시면 상세페이지로 이동합니다</p>
+      <p>앨범을 클릭하시면 상세페이지로 이동합니다</p>
       
       <div className="album-list">
         <ul>

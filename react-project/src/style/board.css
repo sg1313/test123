@@ -1,23 +1,22 @@
 .b-wrapper {
-  border: 2px solid slateblue;
+  color: white;
 }
 
-.box1{
-  border: 2px solid seagreen;
+.form{
   width: 800px;
+  margin: 10px auto;
 }
 
 .text-1-n{
-  border: 1px solid red;
   width: 300px;
 }
 
 .text-1-c {
-  border: 1px solid greenyellow;
+  margin-top: 10px;
 }
 
 .text-2 {
-  color: blueviolet;
+  color: #d09eff;
   font-weight: bold;
   margin-top: -0.5rem;
 }
@@ -32,4 +31,6 @@
 
 .list {
   border: 2px solid white;
+  color: white;
+  border-radius: 25px;
 }

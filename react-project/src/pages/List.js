@@ -25,7 +25,7 @@ const List = () => {
       {content?.map((n) => (
         <li key={n.id} className="text-3">
           <div className="text-3-n">
-            💜닉네임💜 {n.nickname}
+            From.💜{n.nickname}💜
           </div>
           <div className="arrow_box">
             {n.content}

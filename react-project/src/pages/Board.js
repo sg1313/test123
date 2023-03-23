@@ -4,28 +4,15 @@ import List from "./List";
 import {Form, Button} from 'react-bootstrap';
 import "../style/board.css";
 
-// const getData = async () => {
-//   try {
-//     const response = await axios.get("http://localhost:8080/board");
-//     console.log("----response-----", response);
-//     console.log("--response.data--", response.data);
-//   } catch (error) {
-//     console.log("----에러----", error);
-//   }
-// };
-// getData();
-
 const Board = () => {
   // const [content, setContent] = useState();
   // const [nickname, setNickname] = useState();
-  // const today = new Date();
+
   const [values, setValues] = useState({
     content: "",
     nickname: "",
     // date: today,
   });
-
-  // const { contentRef, nicknameRef } = useRef();
 
   const onReset = () => {
     setValues("");
@@ -41,7 +28,7 @@ const Board = () => {
   };
 
   const onClickButton = (e) => {
-    console.log("💜️---게시글등록----💜️", values);
+    // console.log("---게시글등록", values);
     const userData = {
       nickname : values.nickname,
       content : values.content
@@ -49,15 +36,9 @@ const Board = () => {
     // input 박스 안에 넣은 값 등록하기
     axios
       .post("http://localhost:8080/board", userData
-        // content: contentRef.current.value,
-        // nickname: nicknameRef.current.value,
-        // date: today,
       )
       .then((res) => {
-        console.log("🗨️🗨️res.data", res.data);
-        alert("등록시간 ", res.data.date);
-        // setContent(res.data);
-        // setNickname(res.data);
+        // console.log("🗨️전송완료", res.data);
         setValues(res.data);
       })
       .catch((error) => {
@@ -66,9 +47,7 @@ const Board = () => {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // 등록하기 버튼 누르면 알람창 이게 먼저 뜨네 ...
-    alert(`등록내용 : ${values.nickname} & ${values.content}`);
+    alert("등록 완료!");
   };
 
   return (
@@ -77,7 +56,7 @@ const Board = () => {
       BTS에게 따뜻한 응원 한마디 남겨주세요!
       </div>
       <br />
-      <Form onSubmit={handleSubmit} className="box1">
+      <Form onSubmit={handleSubmit} className="form">
       <Form.Group className="text-1-n">
         <Form.Label>닉네임</Form.Label>
         <Form.Control type="text"
@@ -93,7 +72,7 @@ const Board = () => {
         <div className="text-2">💜최대 100글자 까지 입력이 가능합니다.</div>
         <Form.Control
           as="textarea"
-          rows={4}
+          rows={3}
           className="textarea"
           value={values.content || ""}
           name="content"

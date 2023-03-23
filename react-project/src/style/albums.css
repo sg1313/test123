@@ -1,39 +1,45 @@
 
 
 .uppergroup {
-  padding: 10px;
+
   height: auto;
-  border: 1px solid rgb(30, 255, 0);
   display: flex;
 }
 
+.uppergroup-img {
+  float: left;
+  margin: auto;
+}
+
 .uppergroup-right {
-  border: 1px solid slateblue;
   margin: auto 20px;
 }
 
 .box1 {
-  border: 1px solid blue;
   color: white;
 }
 
 .box2 {
-  border : 1px solid white;
-  color: white
+  color: white;
+  width : 600px;
   ;
 }
 
 .subtitle {
-  border-bottom: 1px solid red;
+  border-bottom: 1px dotted rgb(167, 167, 167);
   margin-bottom: 10px;
+  padding-left: 10px;
+  color: lightgray;
 }
 
 
 
 .box3 {
   white-space: pre-line;
-  border: 1px solid skyblue;
   color: white;
+  width: 600px;
+  text-align: right;
+  float: right;
 }
 
 span {

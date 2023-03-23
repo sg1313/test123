@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
       comment: "닉네임"
     },
     content: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING(200),
       allowNull: false,
       comment: "내용"
     },

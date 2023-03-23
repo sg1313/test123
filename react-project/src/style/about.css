@@ -1,27 +1,20 @@
 .group {
-  border: 2px solid black;
-}
-
-.a-title {
-  text-align: center;
+  color: white;
 }
 
 .about {
-  padding: 10px;
-  height: auto;
-  border: 1px solid blue;
   display: flex;
-
+  flex-direction: column;
 }
 
 .aboutpic {
-  border: 1px dashed red;
   float: left;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .aboutbts {
   margin : auto 20px;
-
 }
 
 .text1 {
@@ -32,16 +25,14 @@
 
 .member {
   text-align: center;
-  color: white;
-  display: flex;
 }
 
 li {
   margin: 10px 0;
 }
 
-.memberimg {
-  border: 1px solid white;
+.member1 {
+  display: flex;
 }
 
 li img {
@@ -51,7 +42,7 @@ li img {
 
 .memberinfo {
     margin : auto 20px;
-    background-color: blue;
     font-size: 50px;
     font-weight: 500;
+    text-align: left;
 }
